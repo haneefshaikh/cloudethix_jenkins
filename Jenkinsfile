@@ -1,8 +1,8 @@
 pipeline {
     agent any
      parameters {
-        string(NAME: 'Haneef', defaultValue: 'Hello', description: 'How should I greet the world?'),
-        string(LAST_NAME: 'SHAIKH', defaultValue: 'Hello', description: 'How should I greet the world?'),
+        string(NAME: 'Haneef', defaultValue: 'Hello', description: 'How should I greet the world?')
+        string(LAST_NAME: 'SHAIKH', defaultValue: 'Hello', description: 'How should I greet the world?')
         string(SHOW: 'true', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
 
