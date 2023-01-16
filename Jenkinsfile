@@ -17,6 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh "chmod +x -R first_project.sh"
                 sh "./first_project.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}"
             }
         }
