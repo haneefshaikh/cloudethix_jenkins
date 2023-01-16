@@ -17,7 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh "./first_project.sh.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}"
+                sh "./first_project.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}"
             }
         }
         stage('Deploy') {
