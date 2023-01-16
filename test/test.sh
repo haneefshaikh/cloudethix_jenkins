@@ -6,5 +6,5 @@ if [[ $SHOW == "true" ]]
 then 
 	echo " $NAME $LAST_NAME"
 else
-	echo " Not allowed to show the names "
+	echo " Not allowed to show the names"
 fi
