@@ -1,9 +1,9 @@
 pipeline {
     agent any
-     parameters {
-        string(NAME: 'Haneef', defaultValue: 'Hello', description: 'How should I greet the world?')
-        string(LAST_NAME: 'SHAIKH', defaultValue: 'Hello', description: 'How should I greet the world?')
-        string(SHOW: 'true', defaultValue: 'Hello', description: 'How should I greet the world?')
+    parameters {
+    string(name: 'NAME', defaultValue: 'Asif', description: 'input tag for ansible command.')
+    string(name: 'LAST_NAME', defaultValue: 'Shaikh', description: 'input tag for ansible command.')
+    string(name: 'SHOW', defaultValue: 'true', description: 'input tag for ansible command.')
     }
 
     stages {
