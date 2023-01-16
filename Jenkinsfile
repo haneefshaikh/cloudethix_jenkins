@@ -10,13 +10,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'test/test.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}'
+                //sh 'test/test.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}'
             }
         
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh 'first_project.sh.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}'
             }
         }
         stage('Deploy') {
