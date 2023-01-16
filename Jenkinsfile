@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bash test/test.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}
+                //bash test/test.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}
             }
         
         }
