@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh "chmod +x -R /test/test.sh"
+                sh "chmod +x -R test/test.sh"
                 sh "./test/test.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}"
             }
         
