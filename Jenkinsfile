@@ -1,31 +1,35 @@
 pipeline {
     agent any
     parameters {
-    string(name: 'NAME', defaultValue: 'HANEEF', description: 'input tag for ansible command.')
-    string(name: 'LAST_NAME', defaultValue: 'SHAIKH', description: 'input tag for ansible command.')
-    string(name: 'SHOW', defaultValue: 'true', description: 'input tag for ansible command.')
+    choice(name: 'NAME', choices: ['One','Two','Three'], description: 'input for NAME.')
+    choice(name: 'LAST_NAME', choices: ['Hello','Moto','Fellow'], description: 'input for LAST_NAME.')
+    choice(name: 'SHOW', choices: ['true','false'], description: 'input TRUE and FALSE')
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-                sh "chmod +x -R test/test.sh"
-                sh "./test/test.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}"
+                echo 'Building Stage Executing shell script first_project.sh'
+                sh "chmod +x -R first_project.sh"
+                sh "bash first_project.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}"
             }
         
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-                sh "chmod +x -R first_project.sh"
-                sh "./first_project.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}"
+                echo 'Running Test Script for QA Team'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying on KBS cluster'
             }
+        }
+    }
+    post{
+        always{
+            echo "Deleting Workspace"
+            deleteDir() /* cleaup workspace */
         }
     }
 }
