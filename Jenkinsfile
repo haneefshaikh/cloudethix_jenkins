@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building Stage Executing shell script first_project.sh'
+                echo "Building Stage Executing shell script first_project.sh"
                 sh "chmod +x -R first_project.sh"
                 sh "bash first_project.sh ${params.NAME} ${params.LAST_NAME} ${params.SHOW}"
             }
